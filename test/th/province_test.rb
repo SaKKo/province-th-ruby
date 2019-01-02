@@ -18,4 +18,11 @@ class Th::ProvinceTest < Minitest::Test
     assert x.is_a?(Th::Province)
     assert x.geography.is_a?(Th::Geography)
   end
+
+  def test_provinces_with_geography_id
+    provinces = Th::Province.provinces_with_geography_id(1)
+    assert provinces.count > 0
+    assert provinces.map{|p| p.is_a?(Th::Province) }.uniq.first == true
+    assert provinces.map{|p| p.is_a?(Th::Province) }.uniq.count == 1
+  end
 end
