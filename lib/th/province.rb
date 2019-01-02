@@ -30,6 +30,14 @@ module Th
       Th::Geography.find(@json["geography_id"])
     end
 
+    def amphurs
+      Th::Amphur.amphurs_with_province_id(@json["id"])
+    end
+
+    def districts
+      Th::District.districts_with_province_id(@json["id"])
+    end
+
     def self.provinces_with_geography_id(geography_id)
       arr = @@geography_id_to_data[geography_id]
       arr.map{|a| self.new(a)}

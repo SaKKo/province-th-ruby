@@ -29,5 +29,13 @@ module Th
       Th::Province.provinces_with_geography_id(@json["id"])
     end
 
+    def amphurs
+      Th::Amphur.amphur_with_geography_id(@json["id"])
+    end
+
+    def districts
+      Th::District.districts_with_geography_id(@json["id"])
+    end
+
   end
 end

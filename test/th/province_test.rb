@@ -25,4 +25,13 @@ class Th::ProvinceTest < Minitest::Test
     assert provinces.map{|p| p.is_a?(Th::Province) }.uniq.first == true
     assert provinces.map{|p| p.is_a?(Th::Province) }.uniq.count == 1
   end
+
+  def test_province_amphurs
+    x = Th::Province.find(1)
+    assert !x.nil?
+    assert x.is_a?(Th::Province)
+    assert x.amphurs.count > 0
+    assert x.amphurs.map{|p| p.is_a?(Th::Amphur) }.uniq.first == true
+    assert x.amphurs.map{|p| p.is_a?(Th::Amphur) }.uniq.count == 1
+  end
 end
