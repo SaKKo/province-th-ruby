@@ -1,7 +1,7 @@
 module Th
   class Province
 
-    @@data ||= JSON.parse(File.read("lib/data/province.json"))
+    @@data ||= JSON.parse(File.read("#{__dir__}/../data/province.json"))
     @@geography_id_to_data = @@data.values.group_by{|x| x["geography_id"]}
 
     def self.data

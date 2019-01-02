@@ -1,7 +1,7 @@
 module Th
   class Geography
 
-    @@data ||= JSON.parse(File.read("lib/data/geography.json"))
+    @@data ||= JSON.parse(File.read("#{__dir__}/../data/geography.json"))
 
     def self.data
       @@data

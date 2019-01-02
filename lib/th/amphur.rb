@@ -1,6 +1,6 @@
 module Th
   class Amphur
-    @@data ||= JSON.parse(File.read("lib/data/amphur.json"))
+    @@data ||= JSON.parse(File.read("#{__dir__}/../data/amphur.json"))
     @@geography_id_to_data = @@data.values.group_by{|x| x["geography_id"]}
     @@province_id_to_data = @@data.values.group_by{|x| x["province_id"]}
 
