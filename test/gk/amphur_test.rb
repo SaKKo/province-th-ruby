@@ -1,0 +1,43 @@
+require "test_helper"
+
+class GK::AmphurTest < Minitest::Test
+  def test_amphur_data
+    assert GK::Amphur.data.count > 0
+  end
+  def test_amphur_find
+    x = GK::Amphur.find(1)
+    assert !x.nil?
+    assert x.is_a?(GK::Amphur)
+  end
+  def test_amphur_find
+    assert GK::Amphur.find(1212313213212132131).nil?
+  end
+
+  def test_amphur_geography
+    x = GK::Amphur.find(1)
+    assert !x.nil?
+    assert x.is_a?(GK::Amphur)
+    assert x.geography.is_a?(GK::Geography)
+  end
+
+  def test_amphur_province
+    x = GK::Amphur.find(1)
+    assert !x.nil?
+    assert x.is_a?(GK::Amphur)
+    assert x.province.is_a?(GK::Province)
+  end
+
+  def test_amphurs_with_geography_id
+    amphurs = GK::Amphur.amphurs_with_geography_id(1)
+    assert amphurs.count > 0
+    assert amphurs.map{|p| p.is_a?(GK::Amphur) }.uniq.first == true
+    assert amphurs.map{|p| p.is_a?(GK::Amphur) }.uniq.count == 1
+  end
+
+  def test_amphurs_with_province_id
+    amphurs = GK::Amphur.amphurs_with_province_id(1)
+    assert amphurs.count > 0
+    assert amphurs.map{|p| p.is_a?(GK::Amphur) }.uniq.first == true
+    assert amphurs.map{|p| p.is_a?(GK::Amphur) }.uniq.count == 1
+  end
+end

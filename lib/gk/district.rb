@@ -1,4 +1,4 @@
-module Th
+module GK
   class District
     @@data ||= JSON.parse(File.read("#{__dir__}/../data/district.json"))
     @@geography_id_to_data = @@data.values.group_by{|x| x["geography_id"]}
@@ -28,15 +28,15 @@ module Th
     end
 
     def geography
-      Th::Geography.find(@json["geography_id"])
+      GK::Geography.find(@json["geography_id"])
     end
 
     def province
-      Th::Province.find(@json["province_id"])
+      GK::Province.find(@json["province_id"])
     end
 
     def amphur
-      Th::Amphur.find(@json["amphur_id"])
+      GK::Amphur.find(@json["amphur_id"])
     end
 
     def self.districts_with_geography_id(geography_id)
