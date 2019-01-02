@@ -1,5 +1,5 @@
 module Th
-  class Province
+  class District
 
   end
 end

@@ -1,5 +1,5 @@
 require "version"
 
-module Province
+module Th
   # Your code goes here...
 end
