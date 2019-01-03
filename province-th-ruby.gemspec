@@ -5,7 +5,7 @@ require "version"
 
 Gem::Specification.new do |spec|
   spec.name          = "province-th-ruby"
-  spec.version       = GK::VERSION
+  spec.version       = ThProvince::VERSION
   spec.authors       = ["SaKKo Sama"]
   spec.email         = ["saklism@gmail.com"]
 

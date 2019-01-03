@@ -1,4 +1,4 @@
-module GK
+module ThProvince
   class Province
 
     @@data ||= JSON.parse(File.read("#{__dir__}/../data/province.json"))
@@ -27,15 +27,15 @@ module GK
     end
 
     def geography
-      GK::Geography.find(@json["geography_id"])
+      ThProvince::Geography.find(@json["geography_id"])
     end
 
     def amphurs
-      GK::Amphur.amphurs_with_province_id(@json["id"])
+      ThProvince::Amphur.amphurs_with_province_id(@json["id"])
     end
 
     def districts
-      GK::District.districts_with_province_id(@json["id"])
+      ThProvince::District.districts_with_province_id(@json["id"])
     end
 
     def self.provinces_with_geography_id(geography_id)

@@ -1,3 +1,3 @@
-module GK
-  VERSION = "0.1.1"
+module ThProvince
+  VERSION = "0.1.2"
 end
